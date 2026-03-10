@@ -1,35 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [tarefa, setTarefa] = useState("");
+  const [tarefas, setTarefas] = useState([]);
+
+  function adicionarTarefa() {
+
+    if (tarefa.trim() === "") {
+      return;
+    }
+
+    const novaLista = [...tarefas, tarefa];
+    setTarefas(novaLista);
+
+    setTarefa("");
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="container">
+
+      <h1>Lista de Tarefas</h1>
+
+      <div className="input-area">
+
+        <input
+          type="text"
+          placeholder="Digite uma tarefa..."
+          value={tarefa}
+          onChange={(e) => setTarefa(e.target.value)}
+        />
+
+        <button onClick={adicionarTarefa}>
+          Enviar
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Tarefa</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          {tarefas.map((item, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{item}</td>
+            </tr>
+          ))}
+
+        </tbody>
+
+      </table>
+
+    </div>
+  );
 }
 
-export default App
+export default App;
