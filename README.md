@@ -5,4 +5,5 @@ DevOps é a combinação de "Desenvolvimento" (Dev) e "Operações" (Ops). Enqua
 ## O que é SRE?
 SRE (Site Reliability Engineering) é uma abordagem para garantir que sistemas sejam confiáveis, escaláveis e eficientes. O SRE utiliza práticas e ferramentas para monitorar, identificar e corrigir falhas ou anomalias no software.
 
-Front-end simples para validar conceitos de DevOps
+## Front-end
+Tela de gerenciamento de tarefas que permite ao usuário inserir uma tarefa em um campo de texto e adicioná-la à tabela ao clicar em "Enviar". As tarefas cadastradas são exibidas em uma tabela.
