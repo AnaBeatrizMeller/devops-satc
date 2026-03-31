@@ -25,7 +25,7 @@ jobs:
       run: docker build -t anabeatriz1/devops-satc:0.0.1 .
 
     - name: Push Docker Image
-      run: docker push docker.io/anabeatriz1/devops-satc:0.0.2 
+      run: docker push docker.io/anabeatriz1/devops-satc:0.0.1
   
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v2
